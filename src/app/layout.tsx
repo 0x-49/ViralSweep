@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { siteConfig } from './config/seo'
-import { ThemeProvider } from './components/theme-provider'
+import { Providers } from './components/providers'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -74,17 +74,14 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
       </head>
-      <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+      <body className={`${inter.className} antialiased`}>
+        <Providers>{children}</Providers>
       </body>
     </html>
   )
