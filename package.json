@@ -53,7 +53,7 @@
     "input-otp": "^1.2.4",
     "lodash.throttle": "^4.1.1",
     "lucide-react": "^0.451.0",
-    "next": "14.2.6",
+    "next": "^14.2.22",
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-day-picker": "8.10.1",
@@ -81,5 +81,10 @@
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.13",
     "typescript": "^5"
-  }
+  },
+  "description": "This is a Codev template project that includes:",
+  "main": "postcss.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
