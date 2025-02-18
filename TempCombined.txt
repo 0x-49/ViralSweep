@@ -1,0 +1,1440 @@
+
+================================================================================
+FILE: src\components\Benefits.astro
+================================================================================
+---
+interface Benefit {
+  title: string;
+  description: string;
+  icon: string;
+  image: {
+    src: string;
+    alt: string;
+  };
+  stats: {
+    value: string;
+    label: string;
+  }[];
+}
+
+const benefits: Benefit[] = [
+  {
+    title: "Enterprise-Grade Performance",
+    description: "Handle millions of concurrent users with our cloud-native infrastructure. Built on AWS with auto-scaling and global CDN distribution for lightning-fast responses worldwide.",
+    icon: "⚡",
+    image: {
+      src: "https://landing-page-images-seo.s3.eu-north-1.amazonaws.com/Enterprise-Grade_Performance.png",
+      alt: "Performance dashboard showing real-time metrics"
+    },
+    stats: [
+      { value: "99.99%", label: "Uptime SLA" },
+      { value: "<100ms", label: "Avg Response Time" },
+      { value: "1M+", label: "Concurrent Users" }
+    ]
+  },
+  {
+    title: "Advanced Analytics & AI",
+    description: "Leverage machine learning algorithms for fraud detection, user behavior analysis, and campaign optimization. Get actionable insights with our real-time analytics dashboard.",
+    icon: "🧠",
+    image: {
+      src: "https://landing-page-images-seo.s3.eu-north-1.amazonaws.com/Advanced_Analytics_AI.png",
+      alt: "AI-powered analytics dashboard"
+    },
+    stats: [
+      { value: "50+", label: "Data Points Tracked" },
+      { value: "24/7", label: "Real-time Monitoring" },
+      { value: "100%", label: "GDPR Compliant" }
+    ]
+  },
+  {
+    title: "Seamless Integration",
+    description: "Connect with your existing tech stack through our comprehensive API suite. Native integrations with popular platforms and support for custom implementations.",
+    icon: "🔄",
+    image: {
+      src: "https://landing-page-images-seo.s3.eu-north-1.amazonaws.com/Seamless_Integration.png",
+      alt: "Integration ecosystem diagram"
+    },
+    stats: [
+      { value: "100+", label: "API Endpoints" },
+      { value: "10K/min", label: "API Rate Limit" },
+      { value: "50+", label: "Native Integrations" }
+    ]
+  }
+];
+---
+
+<div class="bg-gradient-to-b from-white to-gray-50 py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-base font-semibold leading-7 text-indigo-600">Enterprise Benefits</h2>
+      <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        Built for Scale and Performance
+      </p>
+      <p class="mt-6 text-lg leading-8 text-gray-600">
+        Experience enterprise-grade capabilities designed to handle your most demanding marketing campaigns.
+      </p>
+    </div>
+
+    <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+      {benefits.map((benefit, index) => (
+        <div class={`flex flex-col lg:flex-row gap-x-8 gap-y-10 ${index % 2 === 0 ? '' : 'lg:flex-row-reverse'} mb-32`}>
+          <!-- Image Section -->
+          <div class="lg:w-1/2">
+            <div class="relative rounded-2xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:p-4">
+              <img
+                src={benefit.image.src}
+                alt={benefit.image.alt}
+                class="w-full rounded-lg bg-white shadow-2xl ring-1 ring-gray-900/10"
+              />
+            </div>
+          </div>
+
+          <!-- Content Section -->
+          <div class="lg:w-1/2 flex flex-col justify-center">
+            <div class="flex items-center gap-x-2">
+              <span class="text-3xl">{benefit.icon}</span>
+              <h3 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+                {benefit.title}
+              </h3>
+            </div>
+            <p class="mt-6 text-lg leading-8 text-gray-600">
+              {benefit.description}
+            </p>
+
+            <!-- Stats Grid -->
+            <dl class="mt-8 grid grid-cols-3 gap-4">
+              {benefit.stats.map(stat => (
+                <div class="bg-white px-4 py-3 rounded-lg shadow-sm ring-1 ring-gray-900/5">
+                  <dt class="text-sm leading-6 text-gray-600">{stat.label}</dt>
+                  <dd class="mt-1 text-xl font-semibold tracking-tight text-indigo-600">
+                    {stat.value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+
+
+================================================================================
+FILE: src\components\CTAGrowth.astro
+================================================================================
+<div class="bg-gradient-to-r from-blue-500 to-teal-500 py-16">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        Ignite Astonishing Growth: Let Your Brand Shine!
+      </h2>
+      <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-100">
+        Transform your marketing strategy with breakthrough tools that convert every click into lasting customer loyalty. Join visionary brands rewriting the rules of digital engagement.
+      </p>
+      <div class="mt-10 flex items-center justify-center gap-x-6">
+        <a
+          href="https://www.viralsweep.com/?via=maxime-emmanuel"
+          class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-blue-500 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        >
+          Get Started Free
+        </a>
+        <a
+          href="https://www.viralsweep.com/?via=maxime-emmanuel"
+          class="text-sm font-semibold leading-6 text-white"
+        >
+          Book Your Demo Now <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+================================================================================
+FILE: src\components\CTASection.astro
+================================================================================
+---
+// CTASection.astro
+---
+
+<div class="bg-gradient-to-r from-purple-600 to-indigo-600 py-16">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        Ready to Boost Your Marketing ROI?
+      </h2>
+      <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-100">
+        Join thousands of successful brands using ViralSweep to grow their audience and drive engagement.
+      </p>
+      <div class="mt-10 flex items-center justify-center gap-x-6">
+        <a
+          href="https://www.viralsweep.com/signup?ref=astroviral"
+          class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-purple-600 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        >
+          Start Free Trial
+        </a>
+        <a href="https://www.viralsweep.com/demo?ref=astroviral" class="text-sm font-semibold leading-6 text-white">
+          Schedule a Demo <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+================================================================================
+FILE: src\components\FAQ.astro
+================================================================================
+---
+const faqCategories: { [key: string]: { title: string, questions: { q: string, a: string }[] } } = {
+  general: {
+    title: "General",
+    questions: [
+      {
+        q: "What makes ViralSweep different from other contest platforms?",
+        a: "ViralSweep stands out with enterprise-grade features like custom API integration, white-label solutions, advanced fraud detection, and real-time analytics. Our platform is built for scale, handling millions of entries while maintaining GDPR and CCPA compliance."
+      },
+      {
+        q: "How does ViralSweep ensure contest fairness and prevent fraud?",
+        a: "We employ multiple layers of security: IP tracking, email verification, browser fingerprinting, and machine learning algorithms to detect suspicious patterns. Our system automatically flags potential duplicate entries and provides detailed audit logs for transparency."
+      },
+      {
+        q: "What kind of support do you offer?",
+        a: "Enterprise customers receive dedicated account management, 24/7 priority support, and custom implementation assistance. All plans include comprehensive documentation, video tutorials, and email support with industry-leading response times."
+      }
+    ]
+  },
+  technical: {
+    title: "Technical",
+    questions: [
+      {
+        q: "Can I integrate ViralSweep with my existing tech stack?",
+        a: "Yes, ViralSweep offers extensive integration capabilities through our RESTful API, webhooks, and native integrations with popular platforms like Salesforce, HubSpot, and Shopify. We also support custom OAuth2 implementations and SSO."
+      },
+      {
+        q: "What are the rate limits for the API?",
+        a: "Enterprise plans include custom rate limits based on your needs, typically starting at 10,000 requests per minute. Standard plans offer 1,000 requests per minute, with burst capabilities for high-traffic events."
+      },
+      {
+        q: "How do you handle data security and compliance?",
+        a: "We maintain SOC 2 Type II compliance, implement end-to-end encryption, and host on AWS with geo-redundant backups. Data is processed in compliance with GDPR, CCPA, and other regional privacy laws, with optional data residency solutions."
+      },
+      {
+        q: "Can I customize the contest widget's appearance and behavior?",
+        a: "Absolutely. Our widget supports custom CSS, JavaScript events, and templating. You can use our headless API to build completely custom interfaces or modify our existing components using our design system."
+      }
+    ]
+  },
+  implementation: {
+    title: "Implementation",
+    questions: [
+      {
+        q: "How long does it typically take to implement ViralSweep?",
+        a: "Basic implementation can be completed in hours using our no-code builder. Custom integrations typically take 2-5 days, depending on complexity. Enterprise implementations with full API integration average 1-2 weeks with our team's support."
+      },
+      {
+        q: "What development resources do I need?",
+        a: "For basic implementations, no technical resources are required. For API integrations, familiarity with RESTful APIs and OAuth2 is helpful. We provide SDKs for popular languages (Python, Node.js, PHP, Ruby) to accelerate development."
+      },
+      {
+        q: "Do you offer staging environments for testing?",
+        a: "Yes, all paid plans include separate staging environments with test data. Enterprise plans get multiple staging environments with data synchronization capabilities and CI/CD pipeline integration support."
+      }
+    ]
+  },
+  analytics: {
+    title: "Analytics & Reporting",
+    questions: [
+      {
+        q: "What kind of analytics do you provide?",
+        a: "Our analytics suite includes real-time dashboards, conversion tracking, viral coefficient measurement, and user journey analysis. Enterprise plans feature custom report builders, raw data access via BigQuery, and integration with popular BI tools."
+      },
+      {
+        q: "Can I track ROI and campaign performance?",
+        a: "Yes, we provide comprehensive ROI tracking including cost per acquisition, viral share rates, and revenue attribution. Our pixel tracking and UTM parameter support enables detailed campaign performance analysis across multiple channels."
+      },
+      {
+        q: "How granular is the data collection?",
+        a: "We collect over 50 data points per entry, including device info, entry method, referral source, and engagement metrics. Custom event tracking allows you to define and monitor specific user actions important to your business."
+      }
+    ]
+  },
+  scaling: {
+    title: "Scaling & Performance",
+    questions: [
+      {
+        q: "How does ViralSweep handle traffic spikes?",
+        a: "Our infrastructure automatically scales to handle sudden traffic increases. We use AWS Auto Scaling groups, CloudFront CDN, and elastic load balancing to maintain performance under heavy load. Our system has handled campaigns with over 1M concurrent users."
+      },
+      {
+        q: "What are the platform's uptime guarantees?",
+        a: "We maintain a 99.99% uptime SLA for Enterprise customers, with real-time status monitoring and automated failover systems. Our infrastructure is distributed across multiple AWS regions for high availability."
+      }
+    ]
+  }
+};
+
+const allQuestions = Object.values(faqCategories).flatMap(category => 
+  category.questions.map(q => ({ ...q, category: category.title }))
+);
+
+import CTASection from './CTASection.astro';
+
+---
+
+<div class="bg-white py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-4xl text-center">
+      <h2 class="text-base font-semibold leading-7 text-purple-600">FAQ</h2>
+      <p class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+        Frequently Asked Questions
+      </p>
+    </div>
+
+    <div class="mt-16">
+      <!-- Tab Navigation -->
+      <div class="border-b border-gray-200">
+        <nav class="-mb-px flex space-x-8 overflow-x-auto" aria-label="FAQ Categories">
+          <button
+            class="category-tab whitespace-nowrap border-b-2 border-purple-600 py-4 px-1 text-sm font-medium text-purple-600"
+            data-category="all"
+          >
+            All Questions
+          </button>
+          {Object.entries(faqCategories).map(([key, category]) => (
+            <button
+              class="category-tab whitespace-nowrap border-b-2 border-transparent py-4 px-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+              data-category={key}
+            >
+              {category.title}
+            </button>
+          ))}
+        </nav>
+      </div>
+
+      <!-- FAQ Content -->
+      <div class="mt-8 space-y-12">
+        <!-- All Questions Section -->
+        <div class="faq-section active" data-category="all">
+          <dl class="space-y-8">
+            {allQuestions.map((item) => (
+              <div class="faq-item">
+                <dt>
+                  <button class="flex w-full items-start justify-between text-left text-gray-900">
+                    <span class="text-base font-semibold leading-7">{item.q}</span>
+                    <span class="ml-6 flex h-7 items-center">
+                      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                      </svg>
+                    </span>
+                  </button>
+                </dt>
+                <dd class="mt-2 pr-12 hidden">
+                  <p class="text-base leading-7 text-gray-600">{item.a}</p>
+                  <p class="mt-2 text-sm text-purple-600">Category: {item.category}</p>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+
+        <!-- Category-specific Sections -->
+        {Object.entries(faqCategories).map(([key, category]) => (
+          <div class="faq-section hidden" data-category={key}>
+            <dl class="space-y-8">
+              {category.questions.map((item) => (
+                <div class="faq-item">
+                  <dt>
+                    <button class="flex w-full items-start justify-between text-left text-gray-900">
+                      <span class="text-base font-semibold leading-7">{item.q}</span>
+                      <span class="ml-6 flex h-7 items-center">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                        </svg>
+                      </span>
+                    </button>
+                  </dt>
+                  <dd class="mt-2 pr-12 hidden">
+                    <p class="text-base leading-7 text-gray-600">{item.a}</p>
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
+
+<CTASection />
+
+<script>
+  // Handle tab switching
+  const tabs = document.querySelectorAll('.category-tab') as NodeListOf<HTMLElement>;
+  const sections = document.querySelectorAll('.faq-section') as NodeListOf<HTMLElement>;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Update tab styles
+      tabs.forEach(t => {
+        t.classList.remove('border-purple-600', 'text-purple-600');
+        t.classList.add('border-transparent', 'text-gray-500');
+      });
+      tab.classList.remove('border-transparent', 'text-gray-500');
+      tab.classList.add('border-purple-600', 'text-purple-600');
+
+      // Show selected section
+      const category = tab.dataset.category;
+      sections.forEach(section => {
+        if (section && category) {
+          section.classList.add('hidden');
+          if (section.dataset.category === category) {
+            section.classList.remove('hidden');
+          }
+        }
+      });
+    });
+  });
+
+  // Handle FAQ item expansion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const button = item.querySelector('button');
+    const answer = item.querySelector('dd');
+    const icon = item.querySelector('svg');
+
+    if (button && answer && icon) {
+      button.addEventListener('click', () => {
+        const isExpanded = !answer.classList.contains('hidden');
+        
+        // Close all other answers
+        document.querySelectorAll('.faq-item').forEach(otherItem => {
+          const otherAnswer = otherItem.querySelector('dd');
+          const otherIcon = otherItem.querySelector('svg');
+          if (otherItem !== item && otherAnswer && otherIcon) {
+            otherAnswer.classList.add('hidden');
+            otherIcon.style.transform = 'rotate(0deg)';
+          }
+        });
+
+        // Toggle current answer
+        answer.classList.toggle('hidden');
+        icon.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(180deg)';
+      });
+    }
+  });
+</script>
+
+<style>
+  .category-tab {
+    transition: all 0.3s ease;
+  }
+  
+  .faq-section {
+    transition: opacity 0.3s ease;
+  }
+
+  .faq-item button {
+    transition: all 0.2s ease;
+  }
+
+  .faq-item svg {
+    transition: transform 0.2s ease;
+  }
+
+  .faq-item dd {
+    transition: all 0.3s ease;
+  }
+</style>
+
+
+
+
+================================================================================
+FILE: src\components\Features.astro
+================================================================================
+---
+const features = [
+  {
+    title: "Innovative Analytics 🔍",
+    description: "Leverage cutting-edge data insights with intuitive dashboards and real-time metrics.",
+    icon: "📊",
+    link: "https://www.viralsweep.com/features?ref=astroviral",
+  },
+  {
+    title: "Seamless Integration 🔗",
+    description: "Effortlessly connect with your favorite tools and platforms through our robust APIs.",
+    icon: "🔌",
+    link: "https://www.viralsweep.com/integrations?ref=astroviral",
+  },
+  {
+    title: "Dynamic Customization ✨",
+    description: "Personalize every aspect of your experience with flexible, modular design options.",
+    icon: "🎨",
+    link: "https://www.viralsweep.com/customize?ref=astroviral",
+  },
+  {
+    title: "Future-Ready Security 🔒",
+    description: "Protect your data with enterprise-grade security and proactive monitoring.",
+    icon: "🛡️",
+    link: "https://www.viralsweep.com/security?ref=astroviral",
+  },
+];
+---
+
+<div class="bg-white py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:text-center">
+      <h2 class="text-base font-semibold leading-7 text-indigo-600">Powerful Platform</h2>
+      <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        Our Cutting-Edge Features
+      </p>
+      <p class="mt-6 text-lg leading-8 text-gray-600">
+        Experience the most advanced contest and sweepstakes platform with features designed for growth and engagement.
+      </p>
+    </div>
+    <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+      <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-4">
+        {features.map((feature) => (
+          <div class="flex flex-col">
+            <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
+              <span class="text-3xl">{feature.icon}</span>
+              {feature.title}
+            </dt>
+            <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
+              <p class="flex-auto">{feature.description}</p>
+              <p class="mt-6">
+                <a
+                  href={feature.link}
+                  class="text-sm font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+                >
+                  Learn More <span aria-hidden="true">→</span>
+                </a>
+              </p>
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </div>
+</div>
+
+
+
+================================================================================
+FILE: src\components\Footer.astro
+================================================================================
+---
+const currentYear = new Date().getFullYear();
+
+const socialLinks = [
+  {
+    name: 'Instagram',
+    url: 'https://www.instagram.com/viralsweep',
+    icon: `<path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />`
+  },
+  {
+    name: 'YouTube',
+    url: 'https://www.youtube.com/@ViralSweep',
+    icon: `<path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clip-rule="evenodd" />`
+  }
+];
+---
+
+<footer class="bg-gray-50 border-t border-gray-200 pt-12 pb-8">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Contact Information -->
+      <div class="space-y-4">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Contact Us</h3>
+        <div class="space-y-2">
+          <p class="text-gray-600">
+            <a href="tel:8002569533" class="hover:text-purple-600 transition-colors">
+              (800) 256-9533
+            </a>
+          </p>
+          <p class="text-gray-600">
+            <a href="mailto:support@viralsweeep.com" class="hover:text-purple-600 transition-colors">
+              support@viralsweeep.com
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Address -->
+      <div class="space-y-4">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Location</h3>
+        <address class="text-gray-600 not-italic">
+          7 Maclellan Dr<br />
+          Building 3<br />
+          Eliot, ME 03903
+        </address>
+      </div>
+
+      <!-- Social Media -->
+      <div class="space-y-4">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Connect With Us</h3>
+        <div class="flex space-x-4">
+          {socialLinks.map(social => (
+            <a
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-600 hover:text-purple-600 transition-colors"
+            >
+              <span class="sr-only">{social.name}</span>
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" set:html={social.icon} />
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright and Affiliate Disclaimer -->
+    <div class="mt-12 pt-8 border-t border-gray-200">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-gray-500 text-sm">
+          &copy; {currentYear} ViralSweep. All rights reserved.
+        </p>
+        <div class="text-gray-500 text-sm text-center md:text-right flex items-center gap-2">
+          <svg class="h-4 w-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>
+            This site contains affiliate links. We may earn a commission when you sign up through our links.
+            <a 
+              href="/affiliate-disclosure" 
+              class="text-purple-600 hover:text-purple-700 underline ml-1"
+            >
+              Learn more
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+================================================================================
+FILE: src\components\Header.astro
+================================================================================
+---
+const navigationLinks = [
+  { icon: "✨", text: "Features", href: "#features" },
+  { icon: "📊", text: "Case Studies", href: "#case-studies" },
+  { icon: "💬", text: "Testimonials", href: "#testimonials" },
+  { icon: "💰", text: "Pricing", href: "#pricing" },
+  { icon: "❓", text: "FAQ", href: "#faq" }
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 py-4">
+    <nav class="flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <img src="/logo.png" alt="ViralSweep" class="h-8" />
+      </div>
+      
+      <ul class="hidden md:flex space-x-8">
+        {navigationLinks.map(link => (
+          <li>
+            <a 
+              href={link.href} 
+              class="flex items-center space-x-2 text-gray-600 hover:text-purple-600 transition-colors"
+            >
+              <span class="text-xl">{link.icon}</span>
+              <span>{link.text}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <div class="flex items-center space-x-4">
+        <a 
+          href="https://viralsweep.com/?via=maxime-emmanuel" 
+          class="hidden md:inline-flex items-center justify-center px-4 py-2 text-white bg-purple-600 rounded-lg hover:bg-purple-700 transition-all"
+        >
+          Get Started 🚀
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style>
+  /* Add smooth scrolling behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+
+
+
+================================================================================
+FILE: src\components\MissingContent.astro
+================================================================================
+---
+const metrics = [
+  { number: "100K+", label: "Successful Campaigns", icon: "🏆" },
+  { number: "50M+", label: "Email Subscribers Generated", icon: "📧" },
+  { number: "100M+", label: "Social Followers Gained", icon: "🌟" },
+  { number: "800%", label: "Average Campaign ROI", icon: "💰" },
+  { number: "10K+", label: "Enterprise Clients", icon: "😊" },
+  { number: "150+", label: "Countries Served", icon: "🌎" }
+];
+
+const caseStudies = [
+  {
+    company: "TechStart Inc.",
+    duration: "3 months",
+    metrics: [
+      { label: "New Subscribers", value: "10,000+", growth: "300%" },
+      { label: "Social Growth", value: "50,000+", growth: "450%" },
+      { label: "ROI", value: "1,200%", growth: "" }
+    ]
+  },
+  {
+    company: "AI Solutions Ltd.",
+    duration: "6 weeks",
+    metrics: [
+      { label: "New Subscribers", value: "25,000+", growth: "500%" },
+      { label: "Social Growth", value: "100,000+", growth: "600%" },
+      { label: "ROI", value: "2,000%", growth: "" }
+    ]
+  },
+  {
+    company: "CloudTech Store",
+    duration: "2 months",
+    metrics: [
+      { label: "New Subscribers", value: "50,000+", growth: "800%" },
+      { label: "Social Growth", value: "150,000+", growth: "900%" },
+      { label: "ROI", value: "3,000%", growth: "" }
+    ]
+  }
+];
+
+const testimonials = [
+  {
+    quote: "ViralSweep's AI-powered campaign optimization increased our conversion rates by 300%. The analytics dashboard is a game-changer for data-driven decisions.",
+    author: "Sarah Johnson",
+    role: "Head of Growth",
+    company: "TechStart Inc."
+  },
+  {
+    quote: "The API integration capabilities and automated workflow features saved our team countless hours. The ROI speaks for itself - 1000% in just 3 months.",
+    author: "Michael Chen",
+    role: "CTO",
+    company: "CloudScale Solutions"
+  }
+];
+
+const pricingPlans = [
+  {
+    name: "Starter",
+    monthlyPrice: "49",
+    annualPrice: "41",
+    features: [
+      "Unlimited Promotions & Entries",
+      "Sweepstakes App",
+      "Contest App",
+      "Instant Win App",
+      "Purchases App - 100 orders",
+      "Waitlist App",
+      "Milestones App",
+      "Comments App",
+      "Gallery App",
+      "Email Forms App",
+      "Social Actions",
+      "Design and Styles",
+      "Basic Integrations"
+    ]
+  },
+  {
+    name: "Business",
+    monthlyPrice: "199",
+    annualPrice: "166",
+    features: [
+      "Starter Plan Features Plus...",
+      "White Label Branding",
+      "Hashtags App (Track 3 Tags)",
+      "Sales Tracking",
+      "Purchases App - 1,000 orders",
+      "Email Notifications",
+      "Custom CSS",
+      "Custom Actions",
+      "Entry Codes",
+      "Premium Integrations",
+      "Host Partner Sweepstakes",
+      "Manage (2) Brands",
+      "(2) Additional Users"
+    ]
+  },
+  {
+    name: "Premium",
+    monthlyPrice: "399",
+    annualPrice: "333",
+    features: [
+      "Business Plan Features Plus...",
+      "Viralsweep API",
+      "Hashtags App (Track (6) Tags)",
+      "Contest Video Uploads",
+      "Purchases App - 5,000 orders",
+      "A/B Testing",
+      "Collect Payments",
+      "Pay To Vote",
+      "Multiple Languages",
+      "Audience Segments",
+      "Bulk Import Entries",
+      "Manage (4) Brands",
+      "(4) Additional Users"
+    ]
+  },
+  {
+    name: "Elite",
+    monthlyPrice: "999",
+    annualPrice: "833",
+    features: [
+      "Premium Plan Features Plus...",
+      "White Glove Service",
+      "(1) Promotion Built For You Per Month",
+      "Purchases App - ∞ orders",
+      "Manage (6) Brands",
+      "(6) Additional Users"
+    ]
+  }
+];
+
+---
+
+<!-- Metrics Section -->
+<section class="bg-gradient-to-r from-gray-900 to-purple-900 text-white py-20">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+      Powering Growth Through
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+        Advanced Technology
+      </span>
+    </h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+      {metrics.map(metric => (
+        <div class="text-center p-6 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all">
+          <span class="text-4xl mb-4 block">{metric.icon}</span>
+          <div class="text-3xl md:text-4xl font-bold mb-2">{metric.number}</div>
+          <div class="text-purple-200">{metric.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Case Studies Section -->
+<section class="bg-gray-50 py-20">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+      Enterprise-Grade
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+        Success Stories
+      </span>
+    </h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      {caseStudies.map(study => (
+        <div class="bg-white rounded-xl shadow-xl p-8 hover:shadow-2xl transition-all">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="text-2xl font-bold">{study.company}</h3>
+            <span class="text-purple-600">{study.duration}</span>
+          </div>
+          <div class="space-y-4">
+            {study.metrics.map(metric => (
+              <div class="border-b border-gray-100 pb-4">
+                <div class="text-sm text-gray-600">{metric.label}</div>
+                <div class="flex items-end justify-between">
+                  <span class="text-2xl font-bold text-gray-900">{metric.value}</span>
+                  {metric.growth && (
+                    <span class="text-green-500 font-semibold">↑ {metric.growth}</span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="bg-white py-20">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+      Trusted by
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+        Tech Leaders
+      </span>
+    </h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      {testimonials.map(testimonial => (
+        <div class="bg-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all">
+          <div class="text-xl text-gray-700 mb-6">"{testimonial.quote}"</div>
+          <div class="flex items-center">
+            <div>
+              <div class="font-bold text-gray-900">{testimonial.author}</div>
+              <div class="text-purple-600">{testimonial.role}</div>
+              <div class="text-gray-600">{testimonial.company}</div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Pricing Section -->
+<section class="bg-gray-50 py-20">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+      Enterprise-Ready
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+        Pricing
+      </span>
+    </h2>
+
+    <!-- Billing Toggle -->
+    <div class="flex justify-center items-center gap-4 mb-12">
+      <span class="text-gray-600">Monthly</span>
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" id="billing-toggle" class="sr-only peer">
+        <div class="w-14 h-7 bg-purple-600 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-purple-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all"></div>
+      </label>
+      <span class="text-gray-600">Annually</span>
+      <span class="ml-2 text-sm text-purple-600 font-medium">Save up to 17%</span>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-8">
+      {pricingPlans.map(plan => (
+        <div class="bg-white rounded-xl shadow-xl p-8 hover:shadow-2xl transition-all">
+          <h3 class="text-2xl font-bold mb-4">{plan.name}</h3>
+          <div class="pricing-monthly">
+            <div class="text-4xl font-bold mb-1">
+              ${plan.monthlyPrice}
+              <span class="text-lg text-gray-600">/mo</span>
+            </div>
+            <div class="text-sm text-gray-600 mb-8">Billed Monthly</div>
+          </div>
+          <div class="pricing-annual hidden">
+            <div class="text-4xl font-bold mb-1">
+              ${plan.annualPrice}
+              <span class="text-lg text-gray-600">/mo</span>
+            </div>
+            <div class="text-sm text-gray-600 mb-8">Billed Annually</div>
+          </div>
+          <ul class="space-y-4">
+            {plan.features.map(feature => (
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+          <a
+            href="https://viralsweep.com/?via=maxime-emmanuel"
+            class="mt-8 block w-full py-3 px-6 text-center text-white bg-purple-600 rounded-lg hover:bg-purple-700 transition-colors"
+          >
+            Start 7-Day Trial
+          </a>
+          <a
+            href="#"
+            class="mt-4 block w-full text-center text-sm text-purple-600 hover:text-purple-700"
+          >
+            See All {plan.name} Features
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <!-- Enterprise Plan -->
+    <div class="mt-12 text-center">
+      <div class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl p-8 max-w-2xl mx-auto">
+        <h3 class="text-2xl font-bold mb-4">Enterprise</h3>
+        <p class="mb-6">Custom solutions for large organizations with specific needs</p>
+        <ul class="text-left space-y-2 mb-8">
+          <li>✓ Custom Design/Integrations</li>
+          <li>✓ Legal Administration</li>
+          <li>✓ Bonding & Registrations</li>
+          <li>✓ Security Assessments</li>
+        </ul>
+        <a
+          href="https://viralsweep.com/?via=maxime-emmanuel"
+          class="inline-block py-3 px-8 text-purple-600 bg-white rounded-lg hover:bg-gray-100 transition-colors"
+        >
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const billingToggle = document.getElementById('billing-toggle');
+  const monthlyPricing = document.querySelectorAll('.pricing-monthly');
+  const annualPricing = document.querySelectorAll('.pricing-annual');
+
+  billingToggle!.addEventListener('change', function() {
+    monthlyPricing.forEach(el => el.classList.toggle('hidden'));
+    annualPricing.forEach(el => el.classList.toggle('hidden'));
+  });
+</script>
+
+
+
+
+
+================================================================================
+FILE: src\components\Testimonials.astro
+================================================================================
+---
+const testimonials = [
+  { name: "Emily", image: "/testimonials/emily.jpg", text: "Great service! I felt truly valued and impressed by the quality." },
+  { name: "Michael", image: "/testimonials/michael.jpg", text: "An amazing experience that exceeded all expectations." },
+  { name: "Sarah", image: "/testimonials/sarah.jpg", text: "Highly recommended! The user experience was seamless and delightful." }
+];
+---
+<div class="bg-white text-black text-center py-8">
+  <h2 class="text-3xl font-bold my-4">Testimonials</h2>
+  <div class="flex flex-col md:flex-row justify-center items-center gap-6 max-w-6xl mx-auto">
+    {testimonials.map(testimonial => (
+      <div class="w-full md:w-1/3 bg-gray-100 p-6 rounded-lg shadow">
+        <img src={testimonial.image} alt={testimonial.name} class="w-24 h-24 rounded-full mx-auto mb-4" />
+        <p class="italic">"{testimonial.text}"</p>
+        <p class="font-bold mt-2">{testimonial.name}</p>
+      </div>
+    ))}
+  </div>
+</div>
+
+
+
+
+================================================================================
+FILE: src\components\Welcome.astro
+================================================================================
+---
+// @ts-nocheck
+const stats = [
+  { number: "500K+", label: "Leads Generated" },
+  { number: "10M+", label: "Contest Entries" },
+  { number: "98%", label: "Client Satisfaction" }
+];
+
+const navigationLinks = [
+  { icon: "✨", text: "Features", href: "#features" },
+  { icon: "📊", text: "Case Studies", href: "#case-studies" },
+  { icon: "💬", text: "Testimonials", href: "#testimonials" },
+  { icon: "💰", text: "Pricing", href: "#pricing" },
+  { icon: "❓", text: "FAQ", href: "#faq" }
+];
+---
+
+<div class="relative bg-gradient-to-r from-purple-600 to-indigo-600 text-white overflow-hidden">
+  <!-- Background Pattern -->  <div class="absolute inset-0 bg-grid-white/[0.05] bg-[length:16px_16px]"></div>
+  
+  <!-- Main Content -->
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+    <div class="text-center lg:text-left grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Left Column: Text Content -->
+      <div class="space-y-8">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">
+          <span class="block">ViralSweep Transforms Your</span>
+          <span class="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-pink-500">
+            Marketing Strategy
+          </span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-purple-100 max-w-3xl">
+          Create viral contests, sweepstakes, and giveaways that drive massive engagement. Build your email list, boost social follows, and generate sales on autopilot.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <a
+            href="https://viralsweep.com/?via=maxime-emmanuel"
+            class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-lg bg-white text-purple-600 hover:bg-purple-50 transition-all duration-200 transform hover:scale-105"
+          >
+            Start Free Trial
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+          <a
+            href="#features"
+            class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-lg border-2 border-purple-300 text-white hover:bg-white/10 transition-all duration-200"
+          >
+            See Features
+          </a>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="grid grid-cols-3 gap-8 mt-12 text-center lg:text-left">
+          {stats.map(stat => (
+            <div>
+              <p class="text-3xl md:text-4xl font-bold text-white">{stat.number}</p>
+              <p class="text-purple-200 mt-1">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Right Column: Tech Illustration -->
+      <div class="relative lg:block">
+        <div class="relative rounded-lg bg-white/10 backdrop-blur-sm p-8 shadow-2xl">
+          <div class="space-y-6">
+            <!-- Campaign Preview -->
+            <div class="bg-white rounded-lg p-4 shadow-lg transform hover:scale-105 transition-transform duration-200">
+              <div class="flex items-center space-x-4 mb-4">
+                <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center">
+                  <span class="text-2xl">🎉</span>
+                </div>
+                <div>
+                  <h3 class="text-gray-900 font-semibold">Win Latest iPhone Pro!</h3>
+                  <p class="text-gray-600 text-sm">Active Campaign</p>
+                </div>
+              </div>
+              <div class="space-y-2">
+                <div class="h-2 bg-purple-100 rounded-full overflow-hidden">
+                  <div class="w-3/4 h-full bg-purple-600"></div>
+                </div>
+                <div class="flex justify-between text-sm">
+                  <span class="text-gray-600">15,234 Entries</span>
+                  <span class="text-purple-600 font-medium">75% Complete</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Analytics Card -->
+            <div class="bg-white rounded-lg p-4 shadow-lg transform hover:scale-105 transition-transform duration-200">
+              <div class="flex justify-between items-center mb-4">
+                <h3 class="text-gray-900 font-semibold">Campaign Analytics</h3>
+                <span class="text-green-500">↑ 24%</span>
+              </div>
+              <div class="relative h-20">
+                <div class="absolute bottom-0 left-0 right-0 flex items-end justify-between h-16">
+                  {[40, 70, 45, 90, 65, 85].map(height => (
+                    <div class="w-8 bg-purple-600 rounded-t" style={`height: ${height}%`}></div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .bg-grid-white {
+    mask-image: linear-gradient(to bottom, transparent, black, transparent);
+  }
+</style>
+
+
+
+
+================================================================================
+FILE: src\layouts\BaseLayout.astro
+================================================================================
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Light Mode Site</title>
+    <link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
+  <body class="min-h-screen bg-white text-black text-center">
+    <header>
+      <slot name="header" />
+    </header>
+    <main class="container mx-auto py-8">
+      <slot />
+    </main>
+    <footer class="py-4">
+      <slot name="footer" />
+    </footer>
+  </body>
+</html>
+
+
+
+================================================================================
+FILE: src\layouts\Layout.astro
+================================================================================
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title: string;
+	description: string;
+	image?: string;
+	canonicalURL?: string;
+}
+
+const {
+	title,
+	description,
+	image = '/og-image.jpg',
+	canonicalURL = Astro.url.href,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Primary Meta Tags -->
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		
+		<!-- Canonical URL -->
+		<link rel="canonical" href={canonicalURL} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url.href} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(image, Astro.url)} />
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url.href} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={new URL(image, Astro.url)} />
+		
+		<!-- Additional Meta Tags -->
+		<meta name="robots" content="index, follow" />
+		<meta name="theme-color" content="#6B46C1" />
+		<meta name="author" content="ViralSweep" />
+	</head>
+	<body class="min-h-screen flex flex-col">
+		<Header />
+		<main class="flex-grow pt-16">
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
+================================================================================
+FILE: src\pages\affiliate-disclosure.astro
+================================================================================
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Affiliate Disclosure | AstroViralSweep"
+  description="Learn about our affiliate relationship with ViralSweep and how we use affiliate links to support our website while maintaining transparency with our users."
+>
+  <div class="bg-white py-24 sm:py-32">
+    <div class="mx-auto max-w-3xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl">
+        <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-8">
+          Affiliate Disclosure
+        </h1>
+        
+        <div class="prose prose-lg prose-indigo max-w-none">
+          <p class="lead text-xl text-gray-600 mb-8">
+            This website contains affiliate links. Here's what that means for you.
+          </p>
+
+          <h2 class="text-2xl font-semibold text-gray-900 mt-12 mb-4">
+            What Are Affiliate Links?
+          </h2>
+          <p class="text-gray-600 mb-6">
+            When you click on certain links on our website and make a purchase, we may receive a commission from ViralSweep. These affiliate links help support our work and allow us to continue providing valuable information about ViralSweep's contest and sweepstakes platform.
+          </p>
+
+          <h2 class="text-2xl font-semibold text-gray-900 mt-12 mb-4">
+            Our Commitment to You
+          </h2>
+          <p class="text-gray-600 mb-6">
+            We want to be completely transparent about our affiliate relationship with ViralSweep. Our goal is to provide honest, unbiased information to help you make informed decisions about using their platform. The presence of affiliate links does not influence our content or recommendations.
+          </p>
+
+          <h2 class="text-2xl font-semibold text-gray-900 mt-12 mb-4">
+            How It Works
+          </h2>
+          <ul class="list-disc pl-6 text-gray-600 mb-6 space-y-3">
+            <li>When you click a link on our site, a small tracking code is added to the URL</li>
+            <li>If you make a purchase, we may earn a commission at no additional cost to you</li>
+            <li>The commission helps support the maintenance and improvement of this website</li>
+            <li>Your purchase price remains the same whether you use our affiliate link or not</li>
+          </ul>
+
+          <h2 class="text-2xl font-semibold text-gray-900 mt-12 mb-4">
+            Questions?
+          </h2>
+          <p class="text-gray-600 mb-6">
+            If you have any questions about our affiliate relationship with ViralSweep or how we use affiliate links, please don't hesitate to contact us. We're committed to transparency and are happy to provide additional information.
+          </p>
+
+          <div class="bg-gray-50 rounded-lg p-6 mt-8">
+            <p class="text-sm text-gray-500">
+              Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+
+
+
+================================================================================
+FILE: src\pages\examples.astro
+================================================================================
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Examples - ViralSweep | Successful Campaign Showcase"
+  description="Browse real-world examples of successful viral marketing campaigns created with ViralSweep. Get inspired by contests, sweepstakes, and giveaways that drove massive engagement."
+>
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold text-center mb-8">Campaign Examples</h1>
+    <!-- Add your examples content here -->
+  </div>
+</Layout>
+
+
+
+================================================================================
+FILE: src\pages\index.astro
+================================================================================
+---
+import Layout from '../layouts/Layout.astro';
+import Welcome from '../components/Welcome.astro';
+import Features from '../components/Features.astro';
+import Benefits from '../components/Benefits.astro';
+import CTAGrowth from '../components/CTAGrowth.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FAQ from '../components/FAQ.astro';
+import MissingContent from '../components/MissingContent.astro';
+import Header from '../components/Header.astro';
+---
+
+<Layout 
+  title="ViralSweep - Create Viral Marketing Campaigns"
+  description="Create viral contests, sweepstakes, and giveaways that drive massive engagement. Build your email list, boost social follows, and generate sales on autopilot."
+>
+  <Header />
+  <main class="pt-16"> 
+    <Welcome />
+    <section id="features">
+      <Features />
+    </section>
+    <section id="case-studies">
+      <Benefits />
+    </section>
+    <CTAGrowth />
+    <section id="testimonials">
+      <Testimonials />
+    </section>
+    <section id="pricing">
+      <MissingContent />
+    </section>
+    <section id="faq">
+      <FAQ />
+    </section>
+  </main>
+</Layout>
+
+
+
+
+================================================================================
+FILE: src\pages\pricing.astro
+================================================================================
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Pricing - ViralSweep | Affordable Viral Marketing Plans"
+  description="View ViralSweep's flexible pricing plans designed for businesses of all sizes. Start growing your email list and engagement with our cost-effective viral marketing solutions."
+>
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold text-center mb-8">Pricing Plans</h1>
+    <!-- Add your pricing content here -->
+  </div>
+</Layout>
+
+
+
+================================================================================
+FILE: src\pages\products.astro
+================================================================================
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Products - ViralSweep | Viral Marketing Solutions"
+  description="Discover ViralSweep's suite of viral marketing tools including sweepstakes, contests, giveaways, and more. Build your email list and drive engagement with our powerful platform."
+>
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold text-center mb-8">Our Products</h1>
+    <!-- Add your products content here -->
+  </div>
+</Layout>
+
+
+
+================================================================================
+FILE: src\pages\resources.astro
+================================================================================
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Resources - ViralSweep | Viral Marketing Guides & Tips"
+  description="Access comprehensive guides, tips, and best practices for creating successful viral marketing campaigns. Learn how to maximize engagement and grow your audience with ViralSweep."
+>
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold text-center mb-8">Resources</h1>
+    <!-- Add your resources content here -->
+  </div>
+</Layout>
+

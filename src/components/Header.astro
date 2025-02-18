@@ -1,0 +1,49 @@
+---
+const navigationLinks = [
+  { icon: "✨", text: "Features", href: "#features" },
+  { icon: "📊", text: "Case Studies", href: "#case-studies" },
+  { icon: "💬", text: "Testimonials", href: "#testimonials" },
+  { icon: "💰", text: "Pricing", href: "#pricing" },
+  { icon: "❓", text: "FAQ", href: "#faq" }
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 py-4">
+    <nav class="flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <img src="/logo.png" alt="ViralSweep" class="h-8" />
+      </div>
+      
+      <ul class="hidden md:flex space-x-8">
+        {navigationLinks.map(link => (
+          <li>
+            <a 
+              href={link.href} 
+              class="flex items-center space-x-2 text-gray-600 hover:text-purple-600 transition-colors"
+            >
+              <span class="text-xl">{link.icon}</span>
+              <span>{link.text}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <div class="flex items-center space-x-4">
+        <a 
+          href="https://viralsweep.com/?via=maxime-emmanuel" 
+          class="hidden md:inline-flex items-center justify-center px-4 py-2 text-white bg-purple-600 rounded-lg hover:bg-purple-700 transition-all"
+        >
+          Get Started 🚀
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style>
+  /* Add smooth scrolling behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+</style>

@@ -1,0 +1,116 @@
+---
+interface Benefit {
+  title: string;
+  description: string;
+  icon: string;
+  image: {
+    src: string;
+    alt: string;
+  };
+  stats: {
+    value: string;
+    label: string;
+  }[];
+}
+
+const benefits: Benefit[] = [
+  {
+    title: "Enterprise-Grade Performance",
+    description: "Handle millions of concurrent users with our cloud-native infrastructure. Built on AWS with auto-scaling and global CDN distribution for lightning-fast responses worldwide.",
+    icon: "⚡",
+    image: {
+      src: "https://landing-page-images-seo.s3.eu-north-1.amazonaws.com/Enterprise-Grade_Performance.png",
+      alt: "Performance dashboard showing real-time metrics"
+    },
+    stats: [
+      { value: "99.99%", label: "Uptime SLA" },
+      { value: "<100ms", label: "Avg Response Time" },
+      { value: "1M+", label: "Concurrent Users" }
+    ]
+  },
+  {
+    title: "Advanced Analytics & AI",
+    description: "Leverage machine learning algorithms for fraud detection, user behavior analysis, and campaign optimization. Get actionable insights with our real-time analytics dashboard.",
+    icon: "🧠",
+    image: {
+      src: "https://landing-page-images-seo.s3.eu-north-1.amazonaws.com/Advanced_Analytics_AI.png",
+      alt: "AI-powered analytics dashboard"
+    },
+    stats: [
+      { value: "50+", label: "Data Points Tracked" },
+      { value: "24/7", label: "Real-time Monitoring" },
+      { value: "100%", label: "GDPR Compliant" }
+    ]
+  },
+  {
+    title: "Seamless Integration",
+    description: "Connect with your existing tech stack through our comprehensive API suite. Native integrations with popular platforms and support for custom implementations.",
+    icon: "🔄",
+    image: {
+      src: "https://landing-page-images-seo.s3.eu-north-1.amazonaws.com/Seamless_Integration.png",
+      alt: "Integration ecosystem diagram"
+    },
+    stats: [
+      { value: "100+", label: "API Endpoints" },
+      { value: "10K/min", label: "API Rate Limit" },
+      { value: "50+", label: "Native Integrations" }
+    ]
+  }
+];
+---
+
+<div class="bg-gradient-to-b from-white to-gray-50 py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-base font-semibold leading-7 text-indigo-600">Enterprise Benefits</h2>
+      <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        Built for Scale and Performance
+      </p>
+      <p class="mt-6 text-lg leading-8 text-gray-600">
+        Experience enterprise-grade capabilities designed to handle your most demanding marketing campaigns.
+      </p>
+    </div>
+
+    <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+      {benefits.map((benefit, index) => (
+        <div class={`flex flex-col lg:flex-row gap-x-8 gap-y-10 ${index % 2 === 0 ? '' : 'lg:flex-row-reverse'} mb-32`}>
+          <!-- Image Section -->
+          <div class="lg:w-1/2">
+            <div class="relative rounded-2xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:p-4">
+              <img
+                src={benefit.image.src}
+                alt={benefit.image.alt}
+                class="w-full rounded-lg bg-white shadow-2xl ring-1 ring-gray-900/10"
+              />
+            </div>
+          </div>
+
+          <!-- Content Section -->
+          <div class="lg:w-1/2 flex flex-col justify-center">
+            <div class="flex items-center gap-x-2">
+              <span class="text-3xl">{benefit.icon}</span>
+              <h3 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+                {benefit.title}
+              </h3>
+            </div>
+            <p class="mt-6 text-lg leading-8 text-gray-600">
+              {benefit.description}
+            </p>
+
+            <!-- Stats Grid -->
+            <dl class="mt-8 grid grid-cols-3 gap-4">
+              {benefit.stats.map(stat => (
+                <div class="bg-white px-4 py-3 rounded-lg shadow-sm ring-1 ring-gray-900/5">
+                  <dt class="text-sm leading-6 text-gray-600">{stat.label}</dt>
+                  <dd class="mt-1 text-xl font-semibold tracking-tight text-indigo-600">
+                    {stat.value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>

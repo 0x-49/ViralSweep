@@ -1,11 +1,37 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Welcome from '../components/Welcome.astro';
+import Features from '../components/Features.astro';
+import Benefits from '../components/Benefits.astro';
+import CTAGrowth from '../components/CTAGrowth.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FAQ from '../components/FAQ.astro';
+import MissingContent from '../components/MissingContent.astro';
+import Header from '../components/Header.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout 
+  title="ViralSweep - Create Viral Marketing Campaigns"
+  description="Create viral contests, sweepstakes, and giveaways that drive massive engagement. Build your email list, boost social follows, and generate sales on autopilot."
+>
+  <Header />
+  <main class="pt-16"> 
+    <Welcome />
+    <section id="features">
+      <Features />
+    </section>
+    <section id="case-studies">
+      <Benefits />
+    </section>
+    <CTAGrowth />
+    <section id="testimonials">
+      <Testimonials />
+    </section>
+    <section id="pricing">
+      <MissingContent />
+    </section>
+    <section id="faq">
+      <FAQ />
+    </section>
+  </main>
 </Layout>

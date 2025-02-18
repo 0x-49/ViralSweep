@@ -1,0 +1,65 @@
+---
+const features = [
+  {
+    title: "Innovative Analytics ",
+    description: "Leverage cutting-edge data insights with intuitive dashboards and real-time metrics.",
+    icon: "",
+    link: "https://www.viralsweep.com/?via=maxime-emmanuel",
+  },
+  {
+    title: "Seamless Integration ",
+    description: "Effortlessly connect with your favorite tools and platforms through our robust APIs.",
+    icon: "",
+    link: "https://www.viralsweep.com/?via=maxime-emmanuel",
+  },
+  {
+    title: "Dynamic Customization ",
+    description: "Personalize every aspect of your experience with flexible, modular design options.",
+    icon: "",
+    link: "https://www.viralsweep.com/?via=maxime-emmanuel",
+  },
+  {
+    title: "Future-Ready Security ",
+    description: "Protect your data with enterprise-grade security and proactive monitoring.",
+    icon: "",
+    link: "https://www.viralsweep.com/?via=maxime-emmanuel",
+  },
+];
+---
+
+<div class="bg-white py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:text-center">
+      <h2 class="text-base font-semibold leading-7 text-indigo-600">Powerful Platform</h2>
+      <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        Our Cutting-Edge Features
+      </p>
+      <p class="mt-6 text-lg leading-8 text-gray-600">
+        Experience the most advanced contest and sweepstakes platform with features designed for growth and engagement.
+      </p>
+    </div>
+    <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+      <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-4">
+        {features.map((feature) => (
+          <div class="flex flex-col">
+            <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
+              <span class="text-3xl">{feature.icon}</span>
+              {feature.title}
+            </dt>
+            <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
+              <p class="flex-auto">{feature.description}</p>
+              <p class="mt-6">
+                <a
+                  href={feature.link}
+                  class="text-sm font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+                >
+                  Learn More <span aria-hidden="true">→</span>
+                </a>
+              </p>
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </div>
+</div>

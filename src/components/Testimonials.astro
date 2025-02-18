@@ -1,0 +1,19 @@
+---
+const testimonials = [
+  { name: "Emily", image: "/testimonials/emily.jpg", text: "Great service! I felt truly valued and impressed by the quality." },
+  { name: "Michael", image: "/testimonials/michael.jpg", text: "An amazing experience that exceeded all expectations." },
+  { name: "Sarah", image: "/testimonials/sarah.jpg", text: "Highly recommended! The user experience was seamless and delightful." }
+];
+---
+<div class="bg-white text-black text-center py-8">
+  <h2 class="text-3xl font-bold my-4">Testimonials</h2>
+  <div class="flex flex-col md:flex-row justify-center items-center gap-6 max-w-6xl mx-auto">
+    {testimonials.map(testimonial => (
+      <div class="w-full md:w-1/3 bg-gray-100 p-6 rounded-lg shadow">
+        <img src={testimonial.image} alt={testimonial.name} class="w-24 h-24 rounded-full mx-auto mb-4" />
+        <p class="italic">"{testimonial.text}"</p>
+        <p class="font-bold mt-2">{testimonial.name}</p>
+      </div>
+    ))}
+  </div>
+</div>

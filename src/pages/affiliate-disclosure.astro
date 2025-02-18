@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Affiliate Disclosure | AstroViralSweep"
+  description="Learn about our affiliate relationship with ViralSweep and how we use affiliate links to support our website while maintaining transparency with our users."
+>
+  <div class="bg-white py-24 sm:py-32">
+    <div class="mx-auto max-w-3xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl">
+        <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-8">
+          Affiliate Disclosure
+        </h1>
+        
+        <div class="prose prose-lg prose-indigo max-w-none">
+          <p class="lead text-xl text-gray-600 mb-8">
+            This website contains affiliate links. Here's what that means for you.
+          </p>
+
+          <h2 class="text-2xl font-semibold text-gray-900 mt-12 mb-4">
+            What Are Affiliate Links?
+          </h2>
+          <p class="text-gray-600 mb-6">
+            When you click on certain links on our website and make a purchase, we may receive a commission from ViralSweep. These affiliate links help support our work and allow us to continue providing valuable information about ViralSweep's contest and sweepstakes platform.
+          </p>
+
+          <h2 class="text-2xl font-semibold text-gray-900 mt-12 mb-4">
+            Our Commitment to You
+          </h2>
+          <p class="text-gray-600 mb-6">
+            We want to be completely transparent about our affiliate relationship with ViralSweep. Our goal is to provide honest, unbiased information to help you make informed decisions about using their platform. The presence of affiliate links does not influence our content or recommendations.
+          </p>
+
+          <h2 class="text-2xl font-semibold text-gray-900 mt-12 mb-4">
+            How It Works
+          </h2>
+          <ul class="list-disc pl-6 text-gray-600 mb-6 space-y-3">
+            <li>When you click a link on our site, a small tracking code is added to the URL</li>
+            <li>If you make a purchase, we may earn a commission at no additional cost to you</li>
+            <li>The commission helps support the maintenance and improvement of this website</li>
+            <li>Your purchase price remains the same whether you use our affiliate link or not</li>
+          </ul>
+
+          <h2 class="text-2xl font-semibold text-gray-900 mt-12 mb-4">
+            Questions?
+          </h2>
+          <p class="text-gray-600 mb-6">
+            If you have any questions about our affiliate relationship with ViralSweep or how we use affiliate links, please don't hesitate to contact us. We're committed to transparency and are happy to provide additional information.
+          </p>
+
+          <div class="bg-gray-50 rounded-lg p-6 mt-8">
+            <p class="text-sm text-gray-500">
+              Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

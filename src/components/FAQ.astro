@@ -1,0 +1,261 @@
+---
+const faqCategories: { [key: string]: { title: string, questions: { q: string, a: string }[] } } = {
+  general: {
+    title: "General",
+    questions: [
+      {
+        q: "What makes ViralSweep different from other contest platforms?",
+        a: "ViralSweep stands out with enterprise-grade features like custom API integration, white-label solutions, advanced fraud detection, and real-time analytics. Our platform is built for scale, handling millions of entries while maintaining GDPR and CCPA compliance."
+      },
+      {
+        q: "How does ViralSweep ensure contest fairness and prevent fraud?",
+        a: "We employ multiple layers of security: IP tracking, email verification, browser fingerprinting, and machine learning algorithms to detect suspicious patterns. Our system automatically flags potential duplicate entries and provides detailed audit logs for transparency."
+      },
+      {
+        q: "What kind of support do you offer?",
+        a: "Enterprise customers receive dedicated account management, 24/7 priority support, and custom implementation assistance. All plans include comprehensive documentation, video tutorials, and email support with industry-leading response times."
+      }
+    ]
+  },
+  technical: {
+    title: "Technical",
+    questions: [
+      {
+        q: "Can I integrate ViralSweep with my existing tech stack?",
+        a: "Yes, ViralSweep offers extensive integration capabilities through our RESTful API, webhooks, and native integrations with popular platforms like Salesforce, HubSpot, and Shopify. We also support custom OAuth2 implementations and SSO."
+      },
+      {
+        q: "What are the rate limits for the API?",
+        a: "Enterprise plans include custom rate limits based on your needs, typically starting at 10,000 requests per minute. Standard plans offer 1,000 requests per minute, with burst capabilities for high-traffic events."
+      },
+      {
+        q: "How do you handle data security and compliance?",
+        a: "We maintain SOC 2 Type II compliance, implement end-to-end encryption, and host on AWS with geo-redundant backups. Data is processed in compliance with GDPR, CCPA, and other regional privacy laws, with optional data residency solutions."
+      },
+      {
+        q: "Can I customize the contest widget's appearance and behavior?",
+        a: "Absolutely. Our widget supports custom CSS, JavaScript events, and templating. You can use our headless API to build completely custom interfaces or modify our existing components using our design system."
+      }
+    ]
+  },
+  implementation: {
+    title: "Implementation",
+    questions: [
+      {
+        q: "How long does it typically take to implement ViralSweep?",
+        a: "Basic implementation can be completed in hours using our no-code builder. Custom integrations typically take 2-5 days, depending on complexity. Enterprise implementations with full API integration average 1-2 weeks with our team's support."
+      },
+      {
+        q: "What development resources do I need?",
+        a: "For basic implementations, no technical resources are required. For API integrations, familiarity with RESTful APIs and OAuth2 is helpful. We provide SDKs for popular languages (Python, Node.js, PHP, Ruby) to accelerate development."
+      },
+      {
+        q: "Do you offer staging environments for testing?",
+        a: "Yes, all paid plans include separate staging environments with test data. Enterprise plans get multiple staging environments with data synchronization capabilities and CI/CD pipeline integration support."
+      }
+    ]
+  },
+  analytics: {
+    title: "Analytics & Reporting",
+    questions: [
+      {
+        q: "What kind of analytics do you provide?",
+        a: "Our analytics suite includes real-time dashboards, conversion tracking, viral coefficient measurement, and user journey analysis. Enterprise plans feature custom report builders, raw data access via BigQuery, and integration with popular BI tools."
+      },
+      {
+        q: "Can I track ROI and campaign performance?",
+        a: "Yes, we provide comprehensive ROI tracking including cost per acquisition, viral share rates, and revenue attribution. Our pixel tracking and UTM parameter support enables detailed campaign performance analysis across multiple channels."
+      },
+      {
+        q: "How granular is the data collection?",
+        a: "We collect over 50 data points per entry, including device info, entry method, referral source, and engagement metrics. Custom event tracking allows you to define and monitor specific user actions important to your business."
+      }
+    ]
+  },
+  scaling: {
+    title: "Scaling & Performance",
+    questions: [
+      {
+        q: "How does ViralSweep handle traffic spikes?",
+        a: "Our infrastructure automatically scales to handle sudden traffic increases. We use AWS Auto Scaling groups, CloudFront CDN, and elastic load balancing to maintain performance under heavy load. Our system has handled campaigns with over 1M concurrent users."
+      },
+      {
+        q: "What are the platform's uptime guarantees?",
+        a: "We maintain a 99.99% uptime SLA for Enterprise customers, with real-time status monitoring and automated failover systems. Our infrastructure is distributed across multiple AWS regions for high availability."
+      }
+    ]
+  }
+};
+
+const allQuestions = Object.values(faqCategories).flatMap(category => 
+  category.questions.map(q => ({ ...q, category: category.title }))
+);
+
+import CTASection from './CTASection.astro';
+
+---
+
+<div class="bg-white py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-4xl text-center">
+      <h2 class="text-base font-semibold leading-7 text-purple-600">FAQ</h2>
+      <p class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+        Frequently Asked Questions
+      </p>
+    </div>
+
+    <div class="mt-16">
+      <!-- Tab Navigation -->
+      <div class="border-b border-gray-200">
+        <nav class="-mb-px flex space-x-8 overflow-x-auto" aria-label="FAQ Categories">
+          <button
+            class="category-tab whitespace-nowrap border-b-2 border-purple-600 py-4 px-1 text-sm font-medium text-purple-600"
+            data-category="all"
+          >
+            All Questions
+          </button>
+          {Object.entries(faqCategories).map(([key, category]) => (
+            <button
+              class="category-tab whitespace-nowrap border-b-2 border-transparent py-4 px-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+              data-category={key}
+            >
+              {category.title}
+            </button>
+          ))}
+        </nav>
+      </div>
+
+      <!-- FAQ Content -->
+      <div class="mt-8 space-y-12">
+        <!-- All Questions Section -->
+        <div class="faq-section active" data-category="all">
+          <dl class="space-y-8">
+            {allQuestions.map((item) => (
+              <div class="faq-item">
+                <dt>
+                  <button class="flex w-full items-start justify-between text-left text-gray-900">
+                    <span class="text-base font-semibold leading-7">{item.q}</span>
+                    <span class="ml-6 flex h-7 items-center">
+                      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                      </svg>
+                    </span>
+                  </button>
+                </dt>
+                <dd class="mt-2 pr-12 hidden">
+                  <p class="text-base leading-7 text-gray-600">{item.a}</p>
+                  <p class="mt-2 text-sm text-purple-600">Category: {item.category}</p>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+
+        <!-- Category-specific Sections -->
+        {Object.entries(faqCategories).map(([key, category]) => (
+          <div class="faq-section hidden" data-category={key}>
+            <dl class="space-y-8">
+              {category.questions.map((item) => (
+                <div class="faq-item">
+                  <dt>
+                    <button class="flex w-full items-start justify-between text-left text-gray-900">
+                      <span class="text-base font-semibold leading-7">{item.q}</span>
+                      <span class="ml-6 flex h-7 items-center">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                        </svg>
+                      </span>
+                    </button>
+                  </dt>
+                  <dd class="mt-2 pr-12 hidden">
+                    <p class="text-base leading-7 text-gray-600">{item.a}</p>
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
+
+<CTASection />
+
+<script>
+  // Handle tab switching
+  const tabs = document.querySelectorAll('.category-tab') as NodeListOf<HTMLElement>;
+  const sections = document.querySelectorAll('.faq-section') as NodeListOf<HTMLElement>;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Update tab styles
+      tabs.forEach(t => {
+        t.classList.remove('border-purple-600', 'text-purple-600');
+        t.classList.add('border-transparent', 'text-gray-500');
+      });
+      tab.classList.remove('border-transparent', 'text-gray-500');
+      tab.classList.add('border-purple-600', 'text-purple-600');
+
+      // Show selected section
+      const category = tab.dataset.category;
+      sections.forEach(section => {
+        if (section && category) {
+          section.classList.add('hidden');
+          if (section.dataset.category === category) {
+            section.classList.remove('hidden');
+          }
+        }
+      });
+    });
+  });
+
+  // Handle FAQ item expansion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const button = item.querySelector('button');
+    const answer = item.querySelector('dd');
+    const icon = item.querySelector('svg');
+
+    if (button && answer && icon) {
+      button.addEventListener('click', () => {
+        const isExpanded = !answer.classList.contains('hidden');
+        
+        // Close all other answers
+        document.querySelectorAll('.faq-item').forEach(otherItem => {
+          const otherAnswer = otherItem.querySelector('dd');
+          const otherIcon = otherItem.querySelector('svg');
+          if (otherItem !== item && otherAnswer && otherIcon) {
+            otherAnswer.classList.add('hidden');
+            otherIcon.style.transform = 'rotate(0deg)';
+          }
+        });
+
+        // Toggle current answer
+        answer.classList.toggle('hidden');
+        icon.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(180deg)';
+      });
+    }
+  });
+</script>
+
+<style>
+  .category-tab {
+    transition: all 0.3s ease;
+  }
+  
+  .faq-section {
+    transition: opacity 0.3s ease;
+  }
+
+  .faq-item button {
+    transition: all 0.2s ease;
+  }
+
+  .faq-item svg {
+    transition: transform 0.2s ease;
+  }
+
+  .faq-item dd {
+    transition: all 0.3s ease;
+  }
+</style>
